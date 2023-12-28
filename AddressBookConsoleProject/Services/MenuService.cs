@@ -77,6 +77,12 @@ public class MenuService : IMenuService
 
         Console.Write("Enter Email: ");
         contact.Email = Console.ReadLine()!;
+        if(string.IsNullOrEmpty(contact.Email))
+        {
+            Console.WriteLine("You have to enter an email");
+            _contactService.PressAnyKeyToContinue();
+            return;
+        }
 
         Console.Write("Enter Phone number: ");
         contact.Phone = Console.ReadLine()!;

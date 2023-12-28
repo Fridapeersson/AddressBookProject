@@ -1,1 +1,1 @@
-[{"$type":"Shared.Models.ContactModel, Shared","FirstName":"frida","LastName":"persson","Email":"fp@gmail.com","Phone":"123","Address":"gatan 1","Id":"1cc8db24-032e-441e-a58c-bcfc86161228"}]
+[{"$type":"Shared.Models.ContactModel, Shared","FirstName":"Frida","LastName":"Persson","Email":"fp@gmail.com","Phone":"1234567890","Address":"Gatan 1","Id":"d88aeb0f-eb78-456a-9d63-a87cf6d1ea39"}]
