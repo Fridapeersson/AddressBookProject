@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:viewmodels="clr-namespace:AddressBookMauiProject.ViewModels"
+             x:DataType="{x:Type viewmodels:EditViewModel}"
+             
+             x:Class="AddressBookMauiProject.Views.EditView"
+             Title="EditView">
+
+
+    <Grid MaximumWidthRequest="400"  Margin="0, 30, 0, 0">
+
+        <VerticalStackLayout Margin="40">
+
+            <Label Text="Edit Contact" FontSize="30" Margin="0,0,0,30" TextDecorations="Underline" HorizontalTextAlignment="Center" />
+
+
+            <StackLayout Padding="10" Spacing="10">
+                <Label Text="First Name" />
+                <Entry Text="{Binding EditContact.FirstName}" />
+            </StackLayout>
+
+            <StackLayout Padding="10">
+                <Label Text="Last Name" />
+                <Entry Text="{Binding EditContact.LastName}" />
+            </StackLayout>
+
+            <StackLayout Padding="10">
+                <Label Text="Email" />
+                <Entry Text="{Binding EditContact.Email}" />
+            </StackLayout>
+
+            <StackLayout Padding="10">
+                <Label Text="Address" />
+                <Entry Text="{Binding EditContact.Address}" />
+            </StackLayout>
+
+            <StackLayout Padding="10">
+                <Label Text="Phone number" />
+                <Entry Text="{Binding EditContact.Phone}" />
+            </StackLayout>
+
+
+            <StackLayout Padding="10">
+                <Button Text="Save" Command = "{Binding UpdateCommand}" />
+            </StackLayout>
+
+
+            <StackLayout Padding="10">
+                <Button Text="Back To Contact List View" Command="{Binding BackCommand}" />
+            </StackLayout>
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

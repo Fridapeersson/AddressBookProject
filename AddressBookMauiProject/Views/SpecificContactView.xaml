@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:viewmodels="clr-namespace:AddressBookMauiProject.ViewModels"
+             xmlns:models="clr-namespace:Shared.Models;assembly=Shared"
+             x:DataType="{x:Type viewmodels:SpecificContactViewModel}"
+             
+             x:Class="AddressBookMauiProject.Views.SpecificContactView"
+             Title="SpecificContactView">
+
+
+
+    <Grid ColumnDefinitions="*, auto" Margin="0, 30, 0, 0" >
+        <VerticalStackLayout HorizontalOptions="Center">
+
+            <Label Text="View Details" FontSize="30" Margin="0,0,0,30" TextDecorations="Underline" HorizontalTextAlignment="Center" />
+
+
+            <HorizontalStackLayout Padding="10" Spacing="10">
+                <Label Text="First name: " />
+                <Label Text="{Binding EditContact.FirstName}" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Padding="10" Spacing="10">
+                <Label Text="Last name: " />
+                <Label Text="{Binding EditContact.LastName}" />
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout Padding="10" Spacing="10">
+                <Label Text="Email: " />
+                <Label Text="{Binding EditContact.Email}" />
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout Padding="10" Spacing="10">
+                <Label Text="Address: " />
+                <Label Text="{Binding EditContact.Address}" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Padding="10" Spacing="10">
+                <Label Text="Phonenumber: " />
+                <Label Text="{Binding EditContact.Phone}" />
+            </HorizontalStackLayout>
+
+
+            <Button Text="Edit Contact" Command="{Binding GoToEditCommand}" Margin="0, 30, 0, 10" />
+            <Button Text="Delete Contact" Command="{Binding DeleteSpecificContactCommand}" Margin="0, 10, 0, 10" BackgroundColor="IndianRed" />
+            <Button Text="Back" Command="{Binding BackCommand}" Margin="0, 10, 0, 10"/>
+
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

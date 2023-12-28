@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AddressBookMauiProject.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AddressBookMauiProject"
+    
+    xmlns:views="clr-namespace:AddressBookMauiProject.Views"
+    
+    Shell.FlyoutBehavior="Disabled"
+    Title="AddressBookMauiProject">
+
+    <ShellContent Title="List Contacts" ContentTemplate="{DataTemplate views:ListContactView}" Route="ListContactView" />
+    <ShellContent Title="List Contacts" ContentTemplate="{DataTemplate views:SpecificContactView}" Route="SpecificContactView" />
+    <ShellContent Title="List Contacts" ContentTemplate="{DataTemplate views:AddView}" Route="AddView" />
+    <ShellContent Title="List Contacts" ContentTemplate="{DataTemplate views:EditView}" Route="EditView" />
+
+</Shell>

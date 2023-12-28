@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:viewmodels="clr-namespace:AddressBookMauiProject.ViewModels"
+             xmlns:models="clr-namespace:Shared.Models;assembly=Shared"
+             x:DataType="{x:Type viewmodels:AddViewModel}"
+             
+             x:Class="AddressBookMauiProject.Views.AddView"
+             Title="AddView">
+
+
+    <Grid MaximumWidthRequest="400"  Margin="0, 30, 0, 0" >
+
+        <VerticalStackLayout Margin="40">
+            <Label Text="Add Contact" FontSize="30" Margin="0,0,0,30" TextDecorations="Underline" HorizontalTextAlignment="Center" />
+
+
+            <StackLayout Padding="10" >
+                <Label Text="First Name" />
+                <Entry Text="{Binding RegForm.FirstName}" Placeholder="First name" />
+            </StackLayout>
+
+            <StackLayout Padding="10">
+                <Label Text="Last Name" />
+                <Entry Text="{Binding RegForm.LastName}" Placeholder="Last name" />
+            </StackLayout>
+
+            <StackLayout Padding="10">
+                <Label Text="Email" />
+                <Entry Text="{Binding RegForm.Email}" Placeholder="Email" />
+            </StackLayout>
+
+            <StackLayout Padding="10">
+                <Label Text="Address" />
+                <Entry Text="{Binding RegForm.Address}" Placeholder="Address" />
+            </StackLayout>
+
+            <StackLayout Padding="10">
+                <Label Text="Phone number" />
+                <Entry Text="{Binding RegForm.Phone}" Placeholder="Phonenumber" />
+            </StackLayout>
+
+
+            <StackLayout Padding="10">
+                <Button Command="{Binding AddCommand}" Text="Add Contact" Margin="0, 30, 0, 0" />
+            </StackLayout>
+
+
+            <StackLayout Padding="10">
+                <Button Command="{Binding BackCommand}" Text="Back" />
+            </StackLayout>
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

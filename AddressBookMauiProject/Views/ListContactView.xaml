@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:viewmodels="clr-namespace:AddressBookMauiProject.ViewModels"
+             xmlns:models="clr-namespace:Shared.Models;assembly=Shared"
+             x:DataType="{x:Type viewmodels:ListContactViewModel}"
+             
+             x:Class="AddressBookMauiProject.Views.ListContactView"
+             Title="ListContactView">
+
+
+
+    <Grid RowDefinitions="auto, *" MaximumWidthRequest="400"  Margin="0, 30, 0, 0" >
+
+        <VerticalStackLayout>
+
+            <Label Text="Address Book" FontSize="30" TextDecorations="Underline" HorizontalTextAlignment="Center"  />
+
+
+            <Button Text="Add Contact" Grid.Row="0" Command="{Binding GoToAddContactCommand}" Margin="50" />
+
+
+
+            <ScrollView Grid.Row="1">
+                <CollectionView ItemsSource="{Binding ContactList}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="{x:Type models:ContactModel}">
+                            <Grid ColumnDefinitions="*, auto">
+                                <VerticalStackLayout>
+                                    <HorizontalStackLayout Grid.Column="0" Spacing="10">
+                                        <Label Text="{Binding FirstName}" />
+                                        <Label Text="{Binding LastName}" />
+                                    </HorizontalStackLayout>
+                                    <Label Text="{Binding Email}" />
+                                </VerticalStackLayout>
+
+
+                                <HorizontalStackLayout Grid.Column="1" Spacing="10" Margin="0,0,0,20">
+                                    <Button CommandParameter="{Binding .}" Command="{Binding Path=GoToSpecificContactCommand, Source={RelativeSource AncestorType={x:Type viewmodels:ListContactViewModel}}}" Text="View Details"  />
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
