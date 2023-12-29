@@ -33,8 +33,6 @@ public partial class EditViewModel : ObservableObject, IQueryAttributable
     [RelayCommand]
     public async Task Update()
     {
-        //_contactService.RemoveAndLoadContactsFromFile();
-
         try
         {
             var result = await Shell.Current.DisplayAlert("Save Changes", "Do you want to save the changes?", "Yes", "No");
@@ -85,5 +83,4 @@ public partial class EditViewModel : ObservableObject, IQueryAttributable
     {
         EditContact = (query["Contact"] as ContactModel)!;
     }
-
 }

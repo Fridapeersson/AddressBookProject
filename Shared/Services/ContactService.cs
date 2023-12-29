@@ -13,7 +13,6 @@ public class ContactService : IContactService
     public ContactService(IFileService fileService)
     {
         _fileService = fileService;
-        //Contacts = contacts;
 
         //Hämtar alla kontakter från filen
         LoadContactsFromFile();
@@ -56,6 +55,10 @@ public class ContactService : IContactService
         }
     }
 
+    /// <summary>
+    ///     Gets all contacts from json list
+    /// </summary>
+    /// <returns>returns a list of contacts, else returns null if no contacts were found</returns>
     public IEnumerable<ContactModel> GetAllContactsFromList()
     {
         try
@@ -69,6 +72,11 @@ public class ContactService : IContactService
         }
     }
 
+    /// <summary>
+    ///     Gets a specific contact from list based on email
+    /// </summary>
+    /// <param name="email">The email of the contact to be searched</param>
+    /// <returns>return a specific contact if found, else null</returns>
     public ContactModel GetSpecificContact(string email)
     {
         try
@@ -91,6 +99,11 @@ public class ContactService : IContactService
         }
     }
 
+    /// <summary>
+    ///     Deletes a specific contact based on email
+    /// </summary>
+    /// <param name="email">The email of the contact to be deleted</param>
+    /// <returns>The deleted contact if found and removed successfully, else null</returns>
     public ContactModel DeleteSpecificContact(string email)
     {
         try
@@ -119,6 +132,9 @@ public class ContactService : IContactService
         }
     }
 
+    /// <summary>
+    ///     Pauses the application and waits for keypress to continue
+    /// </summary>
     public void PressAnyKeyToContinue()
     {
         Console.WriteLine("\n Press any key to go back to main menu");
